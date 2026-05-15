@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Savita Chaudhary | Dermatologist | Lucknow</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+:root{--rose:#C2765A;--blush:#F5EBE4;--forest:#2C4A3E;--cream:#FDFAF7;--text:#1E1E1E;--light-rose:#E8C5B5}
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Jost',sans-serif;background:var(--cream);color:var(--text);overflow-x:hidden}
+nav{position:fixed;top:0;width:100%;z-index:100;padding:20px 60px;display:flex;justify-content:space-between;align-items:center;background:rgba(253,250,247,.95);backdrop-filter:blur(8px);border-bottom:1px solid var(--light-rose)}
+.logo{font-family:'Cormorant Garamond',serif;font-size:1.4rem;color:var(--forest);letter-spacing:1px}
+.nav-links a{color:var(--text);text-decoration:none;margin-left:35px;font-size:.85rem;letter-spacing:1.5px;text-transform:uppercase;opacity:.7;transition:.3s}
+.nav-links a:hover{opacity:1;color:var(--rose)}
+.hero{min-height:100vh;display:grid;grid-template-columns:1fr 1fr;position:relative;overflow:hidden}
+.hero-left{background:var(--forest);display:flex;align-items:center;padding:140px 80px 80px;position:relative}
+.hero-left::after{content:'';position:absolute;right:-60px;top:0;bottom:0;width:120px;background:var(--forest);clip-path:polygon(0 0,0 100%,100% 50%);z-index:2}
+.hero-right{background:var(--blush);display:flex;align-items:center;justify-content:center;position:relative;overflow:hidden}
+.hero-right::before{content:'✦';position:absolute;font-size:25rem;color:rgba(194,118,90,.1);top:-80px;right:-60px;line-height:1}
+.hero-right-inner{padding:140px 80px 80px 120px;position:relative;z-index:1}
+.hero-badge{display:inline-block;background:var(--rose);color:#fff;font-size:.7rem;letter-spacing:3px;text-transform:uppercase;padding:7px 20px;margin-bottom:25px;font-weight:500}
+.hero h1{font-family:'Cormorant Garamond',serif;font-size:clamp(2.8rem,4vw,5rem);color:#fff;line-height:1.05;margin-bottom:20px}
+.hero h1 em{color:var(--light-rose);font-style:italic}
+.hero-sub{color:rgba(255,255,255,.7);font-size:1rem;line-height:1.9;font-weight:300;max-width:380px}
+.hero-cta-area{padding-top:40px;display:flex;flex-direction:column;gap:20px;align-items:flex-start}
+.stats-row{display:flex;gap:40px;margin-top:30px}
+.stat{border-left:2px solid var(--rose);padding-left:15px}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:2.2rem;color:var(--forest);display:block;line-height:1}
+.stat-l{font-size:.75rem;letter-spacing:2px;text-transform:uppercase;color:var(--rose);margin-top:5px}
+.btn-rose{background:var(--rose);color:#fff;padding:15px 40px;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;border:none;cursor:pointer;text-decoration:none;display:inline-block;transition:.3s;font-family:'Jost',sans-serif}
+.btn-rose:hover{background:var(--forest)}
+.btn-outline{background:transparent;border:1.5px solid var(--forest);color:var(--forest);padding:14px 40px;font-size:.85rem;letter-spacing:2px;text-transform:uppercase;text-decoration:none;display:inline-block;transition:.3s;font-family:'Jost',sans-serif}
+.btn-outline:hover{background:var(--forest);color:#fff}
+.section{padding:100px 80px}
+.pill{display:inline-block;background:var(--light-rose);color:var(--rose);font-size:.75rem;letter-spacing:3px;text-transform:uppercase;padding:5px 18px;margin-bottom:15px;font-weight:500}
+.section-h{font-family:'Cormorant Garamond',serif;font-size:clamp(2rem,3vw,3.5rem);line-height:1.15;margin-bottom:25px}
+.about-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:start}
+.timeline{margin-top:30px}
+.tl-item{display:grid;grid-template-columns:80px 1fr;gap:20px;margin-bottom:30px}
+.tl-year{font-family:'Cormorant Garamond',serif;font-size:1.5rem;color:var(--rose);font-weight:600;line-height:1}
+.tl-content{border-left:2px solid var(--light-rose);padding-left:20px}
+.tl-content h4{font-size:.95rem;font-weight:500;margin-bottom:5px}
+.tl-content p{font-size:.85rem;opacity:.65;line-height:1.7}
+.services-wrap{background:var(--forest);padding:100px 80px}
+.srv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-top:60px}
+.srv{background:rgba(255,255,255,.05);padding:40px 30px;transition:.4s;position:relative;overflow:hidden;cursor:default}
+.srv::before{content:'';position:absolute;bottom:0;left:0;right:0;height:3px;background:var(--rose);transform:scaleX(0);transition:.4s;transform-origin:left}
+.srv:hover{background:rgba(255,255,255,.1)}
+.srv:hover::before{transform:scaleX(1)}
+.srv-num{font-family:'Cormorant Garamond',serif;font-size:3rem;color:rgba(194,118,90,.3);display:block;margin-bottom:15px;line-height:1}
+.srv-title{color:#fff;font-size:1.1rem;margin-bottom:10px;letter-spacing:.5px}
+.srv-desc{color:rgba(255,255,255,.5);font-size:.85rem;line-height:1.8}
+.contact-section{padding:100px 80px;background:var(--blush)}
+.contact-wrap{display:grid;grid-template-columns:1fr 1fr;gap:80px;margin-top:60px}
+.form-group{margin-bottom:22px}
+.form-group label{display:block;font-size:.75rem;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px;color:var(--rose)}
+.form-group input,.form-group select,.form-group textarea{width:100%;background:#fff;border:1px solid var(--light-rose);color:var(--text);padding:13px 18px;font-family:'Jost',sans-serif;font-size:.95rem;outline:none;transition:.3s}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--rose)}
+.form-group textarea{height:110px;resize:none}
+.wa-btn{width:100%;background:#25D366;border:none;color:#fff;padding:16px;font-size:1rem;letter-spacing:1.5px;text-transform:uppercase;font-weight:600;cursor:pointer;transition:.3s;font-family:'Jost',sans-serif}
+.wa-btn:hover{background:#1fb059}
+.clinic-card{background:#fff;padding:30px;margin-bottom:20px;border-left:4px solid var(--rose)}
+.clinic-card h4{color:var(--forest);font-size:1rem;margin-bottom:8px;font-weight:600}
+.clinic-card p{font-size:.88rem;color:var(--text);opacity:.7;line-height:1.7}
+.map-wrap{overflow:hidden;border:2px solid var(--light-rose)}
+footer{background:var(--forest);padding:40px 80px;display:flex;justify-content:space-between;align-items:center;color:rgba(255,255,255,.5);font-size:.85rem}
+.footer-brand{font-family:'Cormorant Garamond',serif;color:var(--light-rose);font-size:1.2rem}
+@media(max-width:768px){.hero{grid-template-columns:1fr}.hero-left{padding:120px 25px 50px}.hero-left::after{display:none}.hero-right-inner{padding:50px 25px}.about-wrap,.contact-wrap,.srv-grid{grid-template-columns:1fr}.section,.services-wrap,.contact-section{padding:60px 25px}.nav-links{display:none}footer{flex-direction:column;gap:10px;padding:30px 25px;text-align:center}}
+</style>
+</head>
+<body>
+<nav>
+  <div class="logo">Dr. Savita Chaudhary</div>
+  <div class="nav-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#contact">Appointment</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="hero-left">
+    <div>
+      <div class="hero-badge">MBBS, MD – Dermatology</div>
+      <h1>Expert<br>Skin &<br><em>Hair</em> Care</h1>
+      <p class="hero-sub">Rajaji Puram Skin & Child Care Centre — trusted dermatology practice serving Lucknow with compassion and precision for 15 years.</p>
+      <div class="stats-row">
+        <div class="stat"><span class="stat-n">15</span><span class="stat-l">Years Exp.</span></div>
+        <div class="stat"><span class="stat-n">5K+</span><span class="stat-l">Patients</span></div>
+        <div class="stat"><span class="stat-n">50+</span><span class="stat-l">Treatments</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <div class="hero-right-inner">
+      <div class="pill">RAJAJI PURAM, LUCKNOW</div>
+      <h2 class="section-h" style="color:var(--forest)">Your Skin Deserves the Best Care</h2>
+      <p style="line-height:1.9;opacity:.75;margin-bottom:30px">Book a consultation today and experience dermatology backed by 15 years of clinical expertise and genuine patient care.</p>
+      <div class="hero-cta-area">
+        <a href="#contact" class="btn-rose">Schedule Appointment</a>
+        <a href="https://wa.me/919999999909?text=Hello%20Dr.%20Savita%20Chaudhary,%20I%20would%20like%20to%20book%20an%20appointment." target="_blank" class="btn-outline">💬 Chat on WhatsApp</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="about">
+  <div class="about-wrap">
+    <div>
+      <div class="pill">About Doctor</div>
+      <h2 class="section-h">Dr. Savita Chaudhary</h2>
+      <p style="line-height:1.9;opacity:.7;margin-bottom:20px">Dr. Savita Chaudhary is a dedicated Dermatologist and Child Care specialist at Rajaji Puram Skin & Child Care Centre, Lucknow. With 15 years of experience, she brings warmth, clinical precision, and a holistic approach to skin and paediatric care.</p>
+      <p style="line-height:1.9;opacity:.7">Her dual specialization in dermatology and child care makes her uniquely qualified to treat both adult and paediatric skin conditions, providing families with comprehensive skin health solutions under one roof.</p>
+    </div>
+    <div>
+      <div class="timeline">
+        <div class="tl-item"><div class="tl-year">MBBS</div><div class="tl-content"><h4>Bachelor of Medicine & Surgery</h4><p>Foundation of medical expertise</p></div></div>
+        <div class="tl-item"><div class="tl-year">MD</div><div class="tl-content"><h4>MD – Dermatology</h4><p>Specialized postgraduate training in skin diseases</p></div></div>
+        <div class="tl-item"><div class="tl-year">15 Yr</div><div class="tl-content"><h4>Clinical Practice</h4><p>Rajaji Puram Skin & Child Care Centre, Lucknow</p></div></div>
+        <div class="tl-item"><div class="tl-year">Dual</div><div class="tl-content"><h4>Dermatology + Child Care</h4><p>Unique dual specialization for comprehensive family care</p></div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="services-wrap" id="services">
+  <div style="text-align:center">
+    <div class="pill" style="background:rgba(194,118,90,.2);color:var(--light-rose)">Our Services</div>
+    <h2 class="section-h" style="color:#fff">Comprehensive Skin & Child Care</h2>
+  </div>
+  <div class="srv-grid">
+    <div class="srv"><span class="srv-num">01</span><div class="srv-title">Medical Dermatology</div><p class="srv-desc">Diagnosis and treatment of eczema, psoriasis, urticaria, acne, and all skin diseases.</p></div>
+    <div class="srv"><span class="srv-num">02</span><div class="srv-title">Paediatric Dermatology</div><p class="srv-desc">Specialized skin care for infants and children — nappy rash, childhood eczema, warts and more.</p></div>
+    <div class="srv"><span class="srv-num">03</span><div class="srv-title">Cosmetic Procedures</div><p class="srv-desc">Chemical peels, microdermabrasion, mole removal, and skin brightening treatments.</p></div>
+    <div class="srv"><span class="srv-num">04</span><div class="srv-title">Hair Loss Treatment</div><p class="srv-desc">PRP therapy, mesotherapy, and comprehensive management of alopecia and hair thinning.</p></div>
+    <div class="srv"><span class="srv-num">05</span><div class="srv-title">Allergy & Immunology</div><p class="srv-desc">Skin allergy patch testing, patch sensitivity analysis and allergy management programs.</p></div>
+    <div class="srv"><span class="srv-num">06</span><div class="srv-title">Nail & Foot Care</div><p class="srv-desc">Treatment of nail infections, ingrown nails, psoriatic nail disease and fungal conditions.</p></div>
+  </div>
+</section>
+
+<section class="contact-section" id="contact">
+  <div style="text-align:center">
+    <div class="pill">Book Appointment</div>
+    <h2 class="section-h">Connect With Dr. Savita</h2>
+    <p style="opacity:.7;max-width:480px;margin:0 auto;line-height:1.8">Reach out via our WhatsApp form or visit us at Rajaji Puram. We respond promptly to all inquiries.</p>
+  </div>
+  <div class="contact-wrap">
+    <div>
+      <div class="form-group"><label>Patient Name</label><input type="text" placeholder="Enter full name"></div>
+      <div class="form-group"><label>Mobile Number</label><input type="tel" placeholder="+91 XXXXX XXXXX"></div>
+      <div class="form-group"><label>Age</label><input type="number" placeholder="Patient age"></div>
+      <div class="form-group"><label>Concern</label>
+        <select>
+          <option value="">Select concern</option>
+          <option>Acne / Pimples</option><option>Eczema</option><option>Psoriasis</option>
+          <option>Hair Loss</option><option>Child Skin Issue</option><option>Cosmetic Consultation</option><option>Other</option>
+        </select>
+      </div>
+      <div class="form-group"><label>Message</label><textarea placeholder="Briefly describe your concern..."></textarea></div>
+      <button class="wa-btn" onclick="sendWA()">💬 Send via WhatsApp</button>
+    </div>
+    <div>
+      <div class="clinic-card"><h4>📍 Clinic Location</h4><p>Rajaji Puram Skin & Child Care Centre<br>Rajaji Puram, Lucknow, Uttar Pradesh</p></div>
+      <div class="clinic-card"><h4>⏰ Consultation Hours</h4><p>Monday – Saturday: 9:30 AM – 6:30 PM<br>Sunday: Morning Hours Only</p></div>
+      <div class="clinic-card"><h4>💬 WhatsApp Booking</h4><p>Instant appointment booking and query resolution available on WhatsApp</p></div>
+      <div class="map-wrap">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28646.56!2d80.9167!3d26.8467!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399bfe2a27a99011%3A0x35d96c02b73bdf2!2sRajajipuram%2C%20Lucknow%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1700000000001" width="100%" height="250" style="border:0;display:block" allowfullscreen loading="lazy"></iframe>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="footer-brand">Dr. Savita Chaudhary</div>
+  <p>Rajaji Puram Skin & Child Care Centre, Lucknow</p>
+  <p>© 2025 All Rights Reserved</p>
+</footer>
+
+<script>
+function sendWA(){
+  const name=document.querySelectorAll('input')[0].value||'Patient';
+  const phone=document.querySelectorAll('input')[1].value||'N/A';
+  const age=document.querySelectorAll('input')[2].value||'N/A';
+  const concern=document.querySelector('select').value||'General';
+  const msg=document.querySelector('textarea').value||'';
+  const text=`Hello Dr. Savita Chaudhary,%0AName: ${name}%0APhone: ${phone}%0AAge: ${age}%0AConcern: ${concern}%0AMessage: ${msg}%0A%0APlease confirm my appointment.`;
+  window.open(`https://wa.me/919999999909?text=${text}`,'_blank');
+}
+</script>
+</body>
+</html>
